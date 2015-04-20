@@ -28,12 +28,14 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func fetchMovies() {
+        MBProgressHUD.showHUDAddedTo(view, animated: true)
         let apiKey = "7axwganmenhrsju2wpaxu42s"
         let RottenTomatoesURLString = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=" + apiKey
         let apiEndpoint = NSURL(string: RottenTomatoesURLString)!
         let request = NSMutableURLRequest(URL: apiEndpoint)
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler:{ (response, data, error) in
+            MBProgressHUD.hideHUDForView(self.view, animated: true)
             if error != nil {
                 MessagePane.showMessage(self.view, message: error.localizedDescription)
                 return
