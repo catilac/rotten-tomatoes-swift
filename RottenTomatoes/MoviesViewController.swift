@@ -77,6 +77,7 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let imageURL = NSURL(string: movie.valueForKeyPath("posters.thumbnail") as! String)!
         cell.posterImage.setImageWithURL(imageURL)
+        cell.posterImage.fadeIn()
         
         return cell
         

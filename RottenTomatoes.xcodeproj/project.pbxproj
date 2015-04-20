@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A8B00A91ADF7E2E00B9F13C /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8B00A81ADF7E2E00B9F13C /* MovieCell.swift */; };
 		7A8B00AE1ADF820000B9F13C /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8B00AD1ADF820000B9F13C /* MovieDetailViewController.swift */; };
+		7ABBD2C31AE49ECA0069741A /* PosterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBD2C21AE49ECA0069741A /* PosterImage.swift */; };
 		7AD1FCC51ADF626B00304708 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD1FCC41ADF626B00304708 /* AppDelegate.swift */; };
 		7AD1FCCA1ADF626B00304708 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AD1FCC81ADF626B00304708 /* Main.storyboard */; };
 		7AD1FCCC1ADF626B00304708 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD1FCCB1ADF626B00304708 /* Images.xcassets */; };
@@ -35,6 +36,7 @@
 		7A8B00A81ADF7E2E00B9F13C /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		7A8B00AA1ADF809700B9F13C /* RottenTomatoes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RottenTomatoes-Bridging-Header.h"; sourceTree = "<group>"; };
 		7A8B00AD1ADF820000B9F13C /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		7ABBD2C21AE49ECA0069741A /* PosterImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterImage.swift; sourceTree = "<group>"; };
 		7AD1FCBF1ADF626B00304708 /* RottenTomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RottenTomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD1FCC31ADF626B00304708 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AD1FCC41ADF626B00304708 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				7A8B00A81ADF7E2E00B9F13C /* MovieCell.swift */,
 				7A8B00AA1ADF809700B9F13C /* RottenTomatoes-Bridging-Header.h */,
 				A80845631AE462C700B8BD78 /* MessagePane.swift */,
+				7ABBD2C21AE49ECA0069741A /* PosterImage.swift */,
 			);
 			path = RottenTomatoes;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				7AD1FCC51ADF626B00304708 /* AppDelegate.swift in Sources */,
 				A80845641AE462C700B8BD78 /* MessagePane.swift in Sources */,
 				7AD1FCE51ADF6DC900304708 /* MoviesViewController.swift in Sources */,
+				7ABBD2C31AE49ECA0069741A /* PosterImage.swift in Sources */,
 				7A8B00A91ADF7E2E00B9F13C /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
