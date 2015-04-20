@@ -23,7 +23,11 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let request = NSMutableURLRequest(URL: apiEndpoint)
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler:{ (response, data, error) in
-            var errorValue: NSError? = nil
+            if error != nil {
+                MessagePane.showMessage(self.view, message: error.localizedDescription)
+                return
+            }
+            var errorValue: NSError? = error
             if let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errorValue) as? NSDictionary {
                 self.movies = json["movies"] as? [NSDictionary]
                 self.tableView.reloadData()
