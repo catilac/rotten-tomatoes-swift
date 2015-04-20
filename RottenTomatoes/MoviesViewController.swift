@@ -12,11 +12,22 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     
     var movies: [NSDictionary]?
+    var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.insertSubview(refreshControl, atIndex: 0)
+        
+        fetchMovies()
+    }
+    
+    func fetchMovies() {
         let apiKey = "7axwganmenhrsju2wpaxu42s"
         let RottenTomatoesURLString = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=" + apiKey
         let apiEndpoint = NSURL(string: RottenTomatoesURLString)!
@@ -33,9 +44,12 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.tableView.reloadData()
             }
         })
-        
-        tableView.dataSource = self
-        tableView.delegate = self
+
+    }
+    
+    func onRefresh() {
+        fetchMovies()
+        refreshControl.endRefreshing()
     }
 
     override func didReceiveMemoryWarning() {
