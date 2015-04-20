@@ -32,10 +32,11 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let apiKey = "7axwganmenhrsju2wpaxu42s"
         let RottenTomatoesURLString = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=" + apiKey
         let apiEndpoint = NSURL(string: RottenTomatoesURLString)!
-        let request = NSMutableURLRequest(URL: apiEndpoint)
+        let request = NSMutableURLRequest(URL: apiEndpoint, cachePolicy: .ReturnCacheDataElseLoad, timeoutInterval: 1)
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler:{ (response, data, error) in
             MBProgressHUD.hideHUDForView(self.view, animated: true)
+            
             if error != nil {
                 MessagePane.showMessage(self.view, message: error.localizedDescription)
                 return
@@ -57,6 +58,11 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - UITableViewDelegate methods
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     // MARK: - UITableViewDataSource methods
