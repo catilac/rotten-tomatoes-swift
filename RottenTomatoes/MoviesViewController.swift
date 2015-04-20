@@ -30,7 +30,7 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func fetchMovies() {
         MBProgressHUD.showHUDAddedTo(view, animated: true)
         let apiKey = "7axwganmenhrsju2wpaxu42s"
-        let RottenTomatoesURLString = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=" + apiKey
+        let RottenTomatoesURLString = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=" + apiKey
         let apiEndpoint = NSURL(string: RottenTomatoesURLString)!
         let request = NSMutableURLRequest(URL: apiEndpoint)
         
@@ -75,9 +75,8 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.titleLabel.text = movie["title"] as? String
         cell.synopsisLabel.text = movie["synopsis"] as? String
         
-        let imageURL = NSURL(string: movie.valueForKeyPath("posters.thumbnail") as! String)!
-        cell.posterImage.setImageWithURL(imageURL)
-        cell.posterImage.fadeIn()
+        let posters = movie["posters"] as! NSDictionary
+        cell.posterImage.setPosterImage(posters)
         
         return cell
         

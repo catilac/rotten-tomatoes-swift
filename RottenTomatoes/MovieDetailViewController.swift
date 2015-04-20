@@ -10,7 +10,7 @@ import UIKit
 
 class MovieDetailViewController: UIViewController {
 
-    @IBOutlet weak var posterImage: UIImageView!
+    @IBOutlet weak var posterImage: PosterImage!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var synopsisLabel: UILabel!
     
@@ -20,9 +20,8 @@ class MovieDetailViewController: UIViewController {
         super.viewDidLoad()
         titleLabel.text = movie["title"] as? String
         synopsisLabel.text = movie["synopsis"] as? String
-        
-        let imageURL = NSURL(string: movie.valueForKeyPath("posters.thumbnail") as! String)!
-        posterImage.setImageWithURL(imageURL)
+        let posters = movie["posters"] as! NSDictionary
+        posterImage.setPosterImage(posters)
     }
 
     override func didReceiveMemoryWarning() {
