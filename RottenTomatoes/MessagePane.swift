@@ -19,7 +19,7 @@ class MessagePane: UIView {
         message.textAlignment = NSTextAlignment.Center
         message.textColor = UIColor.whiteColor()
         message.backgroundColor = UIColor.clearColor()
-        message.font = UIFont(name: "HelveticaNeue-Bold", size: 18.0)
+        message.font = UIFont(name: "HelveticaNeue-Bold", size: 12.0)
         
         addSubview(message)
         backgroundColor = UIColor.redColor()

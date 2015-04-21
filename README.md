@@ -18,7 +18,7 @@ Time spent: 6.50 hours
 
 - [x] All images fade in.
 - [x] For the larger poster, load the low-res first and switch to high-res when complete.
-- [ ] All images should be cached in memory and disk: AppDelegate has an instance of `NSURLCache` and `NSURLRequest` makes a request with `NSURLRequestReturnCacheDataElseLoad` cache policy. I tested it by turning off wifi and restarting the app.
+- [x] All images should be cached in memory and disk: AppDelegate has an instance of `NSURLCache` and `NSURLRequest` makes a request with `NSURLRequestReturnCacheDataElseLoad` cache policy. I tested it by turning off wifi and restarting the app.
 - [x] Customize the highlight and selection effect of the cell.
 - [x] Customize the navigation bar.
 - [x] Add a tab bar for Box Office and DVD.
@@ -26,7 +26,7 @@ Time spent: 6.50 hours
 - [ ] Segmented Control to switch between list view and grid view
 
 ### Walkthrough
-![Video Walkthrough](http://i.imgur.com/9d4fXIm.gif)
+![Video Walkthrough](rottentomate.gif)
 
 Credits
 ---------
