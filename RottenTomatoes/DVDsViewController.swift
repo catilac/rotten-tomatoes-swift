@@ -1,14 +1,15 @@
 //
-//  MoviesViewController.swift
+//  DVDsViewController.swift
 //  RottenTomatoes
 //
-//  Created by Chirag Davé on 4/15/15.
+//  Created by Chirag Davé on 4/20/15.
 //  Copyright (c) 2015 Chirag Davé. All rights reserved.
 //
 
 import UIKit
 
-class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DVDsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
     @IBOutlet weak var tableView: UITableView!
     
     var movies: [NSDictionary]?
@@ -16,7 +17,7 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
@@ -25,13 +26,13 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
         tableView.insertSubview(refreshControl, atIndex: 0)
         
-        fetchMovies()
+        fetchDVDs()
     }
     
-    func fetchMovies() {
+    func fetchDVDs() {
         MBProgressHUD.showHUDAddedTo(view, animated: true)
         let apiKey = "7axwganmenhrsju2wpaxu42s"
-        let RottenTomatoesURLString = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=" + apiKey
+        let RottenTomatoesURLString = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=" + apiKey
         let apiEndpoint = NSURL(string: RottenTomatoesURLString)!
         let request = NSMutableURLRequest(URL: apiEndpoint, cachePolicy: .ReturnCacheDataElseLoad, timeoutInterval: 1)
         
@@ -48,14 +49,13 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.tableView.reloadData()
             }
         })
-
     }
     
     func onRefresh() {
-        fetchMovies()
+        fetchDVDs()
         refreshControl.endRefreshing()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -89,9 +89,9 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-
+    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let cell = sender as! MovieCell
@@ -101,5 +101,5 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var detailViewController = segue.destinationViewController as! MovieDetailViewController
         detailViewController.movie = movie
     }
-
+    
 }

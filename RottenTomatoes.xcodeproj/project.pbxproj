@@ -16,6 +16,7 @@
 		7AD1FCCF1ADF626B00304708 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD1FCCD1ADF626B00304708 /* LaunchScreen.xib */; };
 		7AD1FCDB1ADF626B00304708 /* RottenTomatoesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD1FCDA1ADF626B00304708 /* RottenTomatoesTests.swift */; };
 		7AD1FCE51ADF6DC900304708 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD1FCE41ADF6DC900304708 /* MoviesViewController.swift */; };
+		7AE14C851AE608FD006D068E /* DVDsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE14C841AE608FD006D068E /* DVDsViewController.swift */; };
 		A80845641AE462C700B8BD78 /* MessagePane.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80845631AE462C700B8BD78 /* MessagePane.swift */; };
 		EED08D0988DD9A5C5647EC17 /* libPods-RottenTomatoes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0BA272444E5834B39B6F2A /* libPods-RottenTomatoes.a */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 		7AD1FCD91ADF626B00304708 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AD1FCDA1ADF626B00304708 /* RottenTomatoesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RottenTomatoesTests.swift; sourceTree = "<group>"; };
 		7AD1FCE41ADF6DC900304708 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		7AE14C841AE608FD006D068E /* DVDsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVDsViewController.swift; sourceTree = "<group>"; };
 		A80845631AE462C700B8BD78 /* MessagePane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePane.swift; sourceTree = "<group>"; };
 		F18B6636E73C7566F6E34211 /* Pods-RottenTomatoes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RottenTomatoes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RottenTomatoes/Pods-RottenTomatoes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,16 +96,13 @@
 			isa = PBXGroup;
 			children = (
 				7AD1FCC41ADF626B00304708 /* AppDelegate.swift */,
-				7AD1FCE41ADF6DC900304708 /* MoviesViewController.swift */,
-				7A8B00AD1ADF820000B9F13C /* MovieDetailViewController.swift */,
+				7AE14C831AE5FAA7006D068E /* Views */,
+				7AE14C821AE5FA99006D068E /* ViewControllers */,
 				7AD1FCC81ADF626B00304708 /* Main.storyboard */,
 				7AD1FCCB1ADF626B00304708 /* Images.xcassets */,
 				7AD1FCCD1ADF626B00304708 /* LaunchScreen.xib */,
 				7AD1FCC21ADF626B00304708 /* Supporting Files */,
-				7A8B00A81ADF7E2E00B9F13C /* MovieCell.swift */,
 				7A8B00AA1ADF809700B9F13C /* RottenTomatoes-Bridging-Header.h */,
-				A80845631AE462C700B8BD78 /* MessagePane.swift */,
-				7ABBD2C21AE49ECA0069741A /* PosterImage.swift */,
 			);
 			path = RottenTomatoes;
 			sourceTree = "<group>";
@@ -131,6 +130,26 @@
 				7AD1FCD91ADF626B00304708 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7AE14C821AE5FA99006D068E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7AD1FCE41ADF6DC900304708 /* MoviesViewController.swift */,
+				7AE14C841AE608FD006D068E /* DVDsViewController.swift */,
+				7A8B00AD1ADF820000B9F13C /* MovieDetailViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7AE14C831AE5FAA7006D068E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A80845631AE462C700B8BD78 /* MessagePane.swift */,
+				7ABBD2C21AE49ECA0069741A /* PosterImage.swift */,
+				7A8B00A81ADF7E2E00B9F13C /* MovieCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		D732AC95A802A4F3803CDAFD /* Pods */ = {
@@ -291,6 +310,7 @@
 				7AD1FCE51ADF6DC900304708 /* MoviesViewController.swift in Sources */,
 				7ABBD2C31AE49ECA0069741A /* PosterImage.swift in Sources */,
 				7A8B00A91ADF7E2E00B9F13C /* MovieCell.swift in Sources */,
+				7AE14C851AE608FD006D068E /* DVDsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
